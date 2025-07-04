@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 
 import geopy.distance
 import os
@@ -11,11 +10,11 @@ from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
 def abrir_navegador(url):
     """Función especial para DevAsc que usa el navegador correcto"""
     try:
-        # Intenta con el comando específico de DevAsc
+        
         subprocess.run(["devasc-browser", url], check=True)
     except:
         try:
-            # Fallback para sistemas normales
+            
             webbrowser.open(url)
         except:
             print(f"\nNo se pudo abrir el navegador. Puede ver la ruta manualmente en:\n{url}")
@@ -91,7 +90,7 @@ def main():
                 origen = input("\nCiudad de Origen (Chile): ").strip()
                 destino = input("Ciudad de Destino (Perú): ").strip()
                 
-                # Mejorar la entrada del usuario
+                
                 if not origen.lower().endswith("chile"):
                     origen += ", Chile"
                 if not destino.lower().endswith("perú") and not destino.lower().endswith("peru"):
